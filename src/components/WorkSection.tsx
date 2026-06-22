@@ -7,13 +7,34 @@ interface Project {
   title: string;
   category: string;
   desc: string;
+  image: string;
 }
 
 const projects: Project[] = [
-  { title: "Lumina", category: "品牌重塑 / 電商", desc: "為高端護膚品牌建立完整的數位識別系統，從字體到購物體驗的全域設計。" },
-  { title: "Nova AI", category: "SaaS / 儀表板", desc: "AI 分析平台的產品設計與前端工程，將複雜數據轉化為直覺的視覺介面。" },
-  { title: "Arc Studio", category: "作品集 / CMS", desc: "建築事務所的全球作品集網站，Headless CMS 驅動的多語言展示平台。" },
-  { title: "Pulse Health", category: "醫療 / 會員系統", desc: "健康管理平台的 UI/UX 重新設計，會員留存率提升 40%。" },
+  {
+    title: "Lumina",
+    category: "品牌重塑 / 電商",
+    desc: "為高端護膚品牌建立完整的數位識別系統，從字體到購物體驗的全域設計。",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&h=375&fit=crop&auto=format",
+  },
+  {
+    title: "Nova AI",
+    category: "SaaS / 儀表板",
+    desc: "AI 分析平台的產品設計與前端工程，將複雜數據轉化為直覺的視覺介面。",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=375&fit=crop&auto=format",
+  },
+  {
+    title: "Arc Studio",
+    category: "作品集 / CMS",
+    desc: "建築事務所的全球作品集網站，Headless CMS 驅動的多語言展示平台。",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&h=375&fit=crop&auto=format",
+  },
+  {
+    title: "Pulse Health",
+    category: "醫療 / 會員系統",
+    desc: "健康管理平台的 UI/UX 重新設計，會員留存率提升 40%。",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=375&fit=crop&auto=format",
+  },
 ];
 
 const cardVariants: Variants = {
@@ -62,9 +83,14 @@ export default function WorkSection() {
               variants={cardVariants}
               className="liquid-glass rounded-[1.25rem] p-8 group cursor-pointer hover:bg-white/[0.03] transition-colors"
             >
-              {/* Image placeholder */}
-              <div className="w-full aspect-[16/10] rounded-lg bg-white/5 mb-6 flex items-center justify-center overflow-hidden">
-                <span className="font-heading italic text-5xl text-white/10">{p.title}</span>
+              {/* Image */}
+              <div className="w-full aspect-[16/10] rounded-lg mb-6 overflow-hidden bg-white/5">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                  loading="lazy"
+                />
               </div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-[11px] font-body text-white/50 uppercase tracking-wider">

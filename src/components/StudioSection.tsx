@@ -10,10 +10,26 @@ const values = [
 ];
 
 const members = [
-  { name: "林宇軒", role: "創意總監 / 共同創辦人" },
-  { name: "陳雨晴", role: "技術總監 / 共同創辦人" },
-  { name: "張以諾", role: "設計總監" },
-  { name: "王思涵", role: "前端工程師" },
+  {
+    name: "James Mitchell",
+    role: "創意總監 / 共同創辦人",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face&auto=format",
+  },
+  {
+    name: "Sarah Chen",
+    role: "技術總監 / 共同創辦人",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face&auto=format",
+  },
+  {
+    name: "Elena Voss",
+    role: "設計總監",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face&auto=format",
+  },
+  {
+    name: "Marcus Webb",
+    role: "前端工程師",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face&auto=format",
+  },
 ];
 
 export default function StudioSection() {
@@ -94,10 +110,13 @@ export default function StudioSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {members.map((m) => (
               <div key={m.name} className="liquid-glass rounded-[1rem] p-5">
-                <div className="w-full aspect-square rounded-lg bg-white/5 mb-4 flex items-center justify-center">
-                  <span className="font-heading italic text-3xl text-white/10">
-                    {m.name[0]}
-                  </span>
+                <div className="w-full aspect-square rounded-lg overflow-hidden mb-4 bg-white/5">
+                  <img
+                    src={m.avatar}
+                    alt={m.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
                 <p className="font-heading italic text-lg tracking-[-0.5px] text-white">
                   {m.name}
